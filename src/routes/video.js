@@ -6,8 +6,8 @@ const multer = require('multer')
 const upload = multer({ storage })
  
 
-router.post('/',upload.single('file'),video.uploadVideo)
-      //  .get('/', getAllVideos)
-      //  .get('/:id', getVideosById)
+router.post('/upload',upload.single('file'),video.uploadVideo)
+router.get('/videos', video.getAllVideos)
+router.get('/videos/:id', video.getVideosById)
 
 module.exports = router
